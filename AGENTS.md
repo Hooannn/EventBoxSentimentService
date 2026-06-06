@@ -18,6 +18,12 @@ python -m uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 docker build -t eventboxsentiment:latest .
 ```
 
+## Local compose run
+
+```bash
+docker compose up --build
+```
+
 ## Release flow
 
 - Use `./release.sh` from the repo root.

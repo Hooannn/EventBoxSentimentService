@@ -7,7 +7,6 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from pathlib import Path
 import logging
-import pandas as pd
 import unicodedata
 import re
 from underthesea import word_tokenize, text_normalize
@@ -116,6 +115,11 @@ class TextInput(BaseModel):
     text: str
 
 
+@app.get("/health")
+def health_check():
+    return {"status": "ok"}
+
+
 @app.post("/api/v1/sentiment/prediction")
 def predict_sentiment(input_data: TextInput):
     text = input_data.text
@@ -125,4 +129,3 @@ def predict_sentiment(input_data: TextInput):
     sentiment = _predict_sentiment(text)
 
     return {"text": text, "sentiment": sentiment}
-
