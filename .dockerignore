@@ -15,3 +15,12 @@ dist
 *.pyd
 .DS_Store
 docs
+.cache
+.huggingface
+**/.cache
+**/.huggingface
+*.bin
+*.pt
+*.pth
+*.safetensors
+*.onnx
