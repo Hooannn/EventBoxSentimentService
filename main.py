@@ -16,7 +16,6 @@ logger = logging.getLogger(__name__)
 
 
 try:
-
     logger.info(f"Loading tokenizer from: vinai/phobert-base-v2")
     tokenizer = AutoTokenizer.from_pretrained("vinai/phobert-base-v2")
 
