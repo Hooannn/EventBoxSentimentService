@@ -35,7 +35,7 @@ printf '%s' "$DOCKER_PASSWORD" | docker login --username "$DOCKERHUB_USERNAME" -
 cd "$ROOT_DIR"
 
 echo "Building ${FULL_IMAGE}"
-docker build -f "$DOCKERFILE_PATH" -t "$FULL_IMAGE" "$CONTEXT_PATH"
+docker buildx build --platform=linux/amd64 -f "$DOCKERFILE_PATH" -t "$FULL_IMAGE" "$CONTEXT_PATH"
 
 echo "Pushing ${FULL_IMAGE}"
 docker push "$FULL_IMAGE"
