@@ -1,0 +1,16 @@
+# Core API
+fastapi
+uvicorn[standard]
+pydantic
+
+# ML Inference (CHỈ dùng PyTorch - bỏ TensorFlow)
+torch
+transformers
+accelerate>=0.26.0
+
+# Text processing (bỏ gensim nếu không cần)
+underthesea
+pandas
+
+# Optional: scikit-learn chỉ nếu thực sự cần
+# scikit-learn==1.3.2
